@@ -11,7 +11,8 @@
     "start": "nest start",
     "start:dev": "nodemon",
     "start:prod": "node dist/main",
-    "changelog:release": "echo \"Updating changelog $npm_package_version\" && npx chan release $npm_package_version --git-url \"https://github.com/subquery/subql\" --release-prefix=\"node/\""
+    "changelog:release": "echo \"Updating changelog $npm_package_version\" && npx chan release $npm_package_version --git-url \"https://github.com/subquery/subql\" --release-prefix=\"node/\"",
+    "postinstall": "patch-package"
   },
   "homepage": "https://github.com/subquery/subql",
   "repository": "github:subquery/subql",
@@ -34,7 +35,9 @@
     "eventemitter2": "^6.4.5",
     "fetch-h2": "3.0.2",
     "lodash": "^4.17.21",
+    "patch-package": "^8.0.0",
     "pg": "^8.7.1",
+    "postinstall-postinstall": "^2.1.0",
     "reflect-metadata": "^0.1.13",
     "rimraf": "^3.0.2",
     "rxjs": "^7.5.2",

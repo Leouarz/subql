@@ -22,6 +22,9 @@ FROM node:18-alpine
 # Copy .tgz file from builder
 COPY --from=builder /app/packages/node/app.tgz /app.tgz
 
+# Copy patch package script
+COPY ./patches ./patches
+
 # Install production dependencies
 RUN apk add --no-cache tini curl git && \
     tar -xzvf /app.tgz --strip 1 && \
